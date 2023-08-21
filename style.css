@@ -22,7 +22,7 @@ body {
 
 @font-face {
   font-family: RetroComputer;
-  src: url("./fonts/retro_computer_personal_use.ttf");
+  src: url("fonts/retro_computer_personal_use.ttf");
 }
 
 .container {
