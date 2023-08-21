@@ -1,6 +1,6 @@
-html{
+html {
   display: flex;
-  flex-flow: row nowrap;  
+  flex-flow: row nowrap;
   justify-content: center;
   align-content: center;
   align-items: center;
@@ -8,16 +8,21 @@ html{
   width: 100%;
   margin: 0;
   padding: 0;
-  background:#263238;
-    }
+  background: #1e1e2e;
+}
 
 body {
-  background: #263238;
-  color: #BBC4C8;
+  background: #1e1e2e;
+  color: #bbc4c8;
   height: 100%;
   width: 100%;
   margin: 0;
   padding: 0;
+}
+
+@font-face {
+  font-family: RetroComputer;
+  src: url("./fonts/retro_computer_personal_use.ttf");
 }
 
 .container {
@@ -26,6 +31,21 @@ body {
   height: 100%;
   width: 100%;
   justify-content: center;
+  align-items: center;
+}
+
+.firefox-text {
+  font-family: RetroComputer;
+  font-size: 50px;
+  color: #cdd6f4;
+  text-align: center;
+  margin: 40px;
+  padding: 5px;
+}
+
+.firefox-img {
+  width: 100px;
+  height: 100px;
 }
 
 .head {
@@ -33,27 +53,12 @@ body {
   flex-direction: column;
 }
 
-.category {
+.firefox {
   display: flex;
-  flex-direction: column;
-  width: 150px;
-}
-
-.bookmark {
-  display: flex;
-  justify-content: space-evenly;
-}
-
-.bookmarks {
-  display: flex;
-  flex-direction: column;
-  border: #191C1E;
-  border-radius: 3px;
-  box-shadow: 0px 4px 5px #171D20;
+  flex-direction: row;
+  justify-content: space-around;
   align-items: center;
-  padding-top: 20px;
-  padding-bottom: 20px;
-  background: #222D32;
+  margin-bottom: 40px;
 }
 
 .logo {
@@ -61,12 +66,16 @@ body {
   padding: 15px;
 }
 
+.search-img {
+  width: 40px;
+  height: 40px;
+}
+
 .icon {
   align-self: center;
   justify-content: center;
   margin: 15px;
 }
-
 
 .input_box {
   border: none;
@@ -76,10 +85,9 @@ body {
   padding-left: 15px;
   width: 422px;
   color: whitesmoke;
-  font-size: 22px;
+  font-size: 16px;
   border-radius: 0px 0px 0px 0px;
   height: 70px;
-  text-align: center;
 }
 
 .button {
@@ -101,6 +109,8 @@ body {
   transition-duration: 0.6s;
   position: relative;
   opacity: 60%;
+  width: 40px;
+  height: 40px;
 }
 
 form {
@@ -110,14 +120,15 @@ form {
 
 .search_box {
   display: flex;
-  background: #222D32;
+  background: #313244;
   width: 600px;
   padding: 0px;
   margin-bottom: 40px;
   border-radius: 3px 3px 3px 3px;
-  box-shadow: 0px 4px 5px #171D20;
+  box-shadow: 0px 4px 5px #0b0f0f;
   align-self: center;
-  height: 70px;
+  height: 55px;
+  align-items: center;
 }
 
 .engine:hover {
@@ -130,41 +141,58 @@ form {
   opacity: 100%;
 }
 
-li {
-  font-size: 16px;
-  list-style-type: none;
-  padding: 5px
+.bookmarks {
+  display: grid;
+  grid-template-columns: auto auto auto auto auto auto;
+  gap: 20px;
+  width: 80%;
+  height: 35%;
+  justify-content: center;
+  align-items: center;
 }
 
-a:link {
-  text-decoration: none;
-  color: #8F9191;
+.bookmark {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border-radius: 10px;
 }
 
-a:visited {
-  color: #8F9191;
+.link {
+  padding: 0px;
+  margin: 0px;
 }
 
-a:hover {
-  color: #BD3CD3;
+@keyframes grow {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.2);
+  }
 }
 
-div.bookmarks.cod a:hover {
-  color: #00CF35;
+.bookmark-img {
+  width: 40px;
+  height: 40px;
 }
 
-div.bookmarks.doc a:hover {
-  color: #FF8A00;
+.bookmark:hover {
+  filter: saturate(200%) brightness(150%) !important;
+  animation: grow 0.15s;
+  transform: scale(1.2);
 }
 
-div.bookmarks.ent a:hover {
-  color: #FF492F;
-}
-
-div.bookmarks.mus a:hover {
-  color: #00B8FF;
-}
-
-div.bookmarks.art a:hover {
-  color: #FF62CE;
+@media only screen and (max-width: 1024px) {
+  .bookmark {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    width: 90px;
+    height: 90px;
+    box-shadow: 0px 4px 5px #0b0f0f;
+  }
 }
